@@ -1,15 +1,6 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
-@font-face {
-  font-family: 'Brockmann';
-  src: url('/brockmann-medium-webfont.ttf') format('truetype'),
-       url('/brockmann-medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
 
 @tailwind base;
 @tailwind components;
@@ -17,8 +8,17 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Facchini Design System */
+    --color-bg: #000000;
+    --color-accent-1: #E0921E;
+    --color-accent-2: #FFDE59;
+    --color-text: #FFFFFF;
+    --color-text-muted: rgba(255, 255, 255, 0.72);
+    --color-divider: rgba(255, 255, 255, 0.12);
+    
+    /* Original system colors updated for Facchini */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -26,8 +26,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 24 95% 53%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 43 86% 55%;
+    --primary-foreground: 0 0% 0%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -102,7 +102,7 @@
   }
 
   body {
-    @apply bg-white text-black font-sans antialiased;
+    @apply bg-black text-white font-montserrat antialiased;
   }
 
   /* Smooth scrolling */
@@ -130,48 +130,100 @@
 }
 
 @layer components {
-  .text-mask-image {
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .pulse-chip {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-pulse-100 text-pulse-600 border border-pulse-200;
+  /* Facchini Brand Components */
+  .facchini-chip {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border;
+    background: rgba(224, 146, 30, 0.1);
+    color: #E0921E;
+    border-color: rgba(224, 146, 30, 0.3);
   }
   
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12;
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-tight;
   }
 
   .section-subtitle {
-    @apply text-lg md:text-xl text-gray-600 mt-4 max-w-3xl;
+    @apply text-lg md:text-xl leading-relaxed mt-4 max-w-3xl;
+    color: var(--color-text-muted);
   }
 
   .glass-card {
-    @apply bg-white/70 backdrop-blur-sm border border-white/20 rounded-2xl shadow-elegant transition-all duration-300 hover:shadow-elegant-hover;
+    @apply backdrop-blur-sm border rounded-2xl shadow-elegant transition-all duration-300 hover:shadow-elegant-hover;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-divider);
   }
 
   .feature-card {
     @apply p-6 rounded-2xl transition-all duration-500 hover:translate-y-[-5px];
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--color-divider);
   }
   
   .button-primary {
-    @apply bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98];
+    @apply font-medium py-4 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98];
+    background-color: #FFDE59;
+    color: #000000;
+  }
+
+  .button-primary:hover {
+    background-color: #FFF066;
+    box-shadow: 0 0 20px rgba(255, 222, 89, 0.4);
   }
 
   .button-secondary {
-    @apply bg-transparent border border-gray-300 hover:border-pulse-500 text-gray-800 hover:text-pulse-500 font-medium py-3 px-6 rounded-full transition-all duration-300;
+    @apply font-medium py-4 px-6 rounded-full transition-all duration-300 border;
+    background: transparent;
+    color: #FFFFFF;
+    border-color: #E0921E;
+  }
+
+  .button-secondary:hover {
+    background-color: #E0921E;
+    color: #000000;
   }
   
   .nav-link {
-    @apply relative text-gray-800 hover:text-pulse-500 py-2 transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-pulse-500 after:transition-all hover:after:w-full;
+    @apply relative py-2 transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:transition-all hover:after:w-full;
+    color: var(--color-text);
+  }
+
+  .nav-link:hover {
+    color: #E0921E;
+  }
+
+  .nav-link:after {
+    background-color: #E0921E;
+  }
+
+  /* Count up animations */
+  .count-up {
+    @apply font-semibold;
+    color: #E0921E;
+  }
+
+  /* Form styles */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-lg border transition-colors duration-300 focus:outline-none focus:ring-2 font-medium;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-divider);
+    color: var(--color-text);
+  }
+
+  .form-input:focus {
+    border-color: #E0921E;
+    ring-color: rgba(224, 146, 30, 0.3);
+  }
+
+  .form-input::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  .form-textarea {
+    @apply form-input min-h-[120px] resize-none;
   }
 }
 

@@ -63,19 +63,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Pulse Robot
-				pulse: {
-					"50": "#fff7ed",
-					"100": "#ffedd5",
-					"200": "#fed7aa",
-					"300": "#fdba74",
-					"400": "#fb923c",
-					"500": "#f97316", // Primary orange
-					"600": "#ea580c",
-					"700": "#c2410c",
-					"800": "#9a3412",
-					"900": "#7c2d12",
-					"950": "#431407",
+				// Facchini Brand Colors
+				facchini: {
+					"bg": "#000000",
+					"accent-1": "#E0921E", // dourado queimado
+					"accent-2": "#FFDE59", // amarelo
+					"text": "#FFFFFF",
+					"text-muted": "rgba(255, 255, 255, 0.72)",
+					"divider": "rgba(255, 255, 255, 0.12)",
 				},
 				dark: {
 					"900": "#121212", // Almost black
@@ -142,10 +137,9 @@ export default {
 				'pulse-gradient': 'linear-gradient(180deg, rgba(249,115,22,0.8) 0%, rgba(249,115,22,0) 100%)',
 			},
 			fontFamily: {
-				'sans': ['Inter', 'sans-serif'],
-				'display': ['Brockmann', 'SF Pro Display', 'Inter', 'sans-serif'],
-				'brockmann': ['Brockmann', 'serif'],
-				'playfair': ['"Playfair Display"', 'serif'],
+				'sans': ['Montserrat', 'sans-serif'],
+				'montserrat': ['Montserrat', 'sans-serif'],
+				'display': ['Montserrat', 'sans-serif'],
 			},
 			boxShadow: {
 				'elegant': '0 4px 20px rgba(0, 0, 0, 0.08)',

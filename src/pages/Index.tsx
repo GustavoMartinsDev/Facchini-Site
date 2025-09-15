@@ -1,19 +1,16 @@
 
 import React, { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import HumanoidSection from "@/components/HumanoidSection";
-import SpecsSection from "@/components/SpecsSection";
-import DetailsSection from "@/components/DetailsSection";
-import ImageShowcaseSection from "@/components/ImageShowcaseSection";
-import Features from "@/components/Features";
-import Testimonials from "@/components/Testimonials";
-import Newsletter from "@/components/Newsletter";
-import MadeByHumans from "@/components/MadeByHumans";
-import Footer from "@/components/Footer";
+import FacchiniNavbar from "@/components/FacchiniNavbar";
+import FacchiniHero from "@/components/FacchiniHero";
+import FacchiniAbout from "@/components/FacchiniAbout";
+import FacchiniServices from "@/components/FacchiniServices";
+import FacchiniPortfolio from "@/components/FacchiniPortfolio";
+import FacchiniCTA from "@/components/FacchiniCTA";
+import FacchiniContact from "@/components/FacchiniContact";
+import FacchiniFooter from "@/components/FacchiniFooter";
 
 const Index = () => {
-  // Initialize intersection observer to detect when elements enter viewport
+  // Initialize intersection observer for fade-in animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -27,7 +24,7 @@ const Index = () => {
       { threshold: 0.1 }
     );
     
-    const elements = document.querySelectorAll(".animate-on-scroll");
+    const elements = document.querySelectorAll(".fadeIn");
     elements.forEach((el) => observer.observe(el));
     
     return () => {
@@ -35,44 +32,18 @@ const Index = () => {
     };
   }, []);
 
-  useEffect(() => {
-    // This helps ensure smooth scrolling for the anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href')?.substring(1);
-        if (!targetId) return;
-        
-        const targetElement = document.getElementById(targetId);
-        if (!targetElement) return;
-        
-        // Increased offset to account for mobile nav
-        const offset = window.innerWidth < 768 ? 100 : 80;
-        
-        window.scrollTo({
-          top: targetElement.offsetTop - offset,
-          behavior: 'smooth'
-        });
-      });
-    });
-  }, []);
-
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <main className="space-y-4 sm:space-y-8"> {/* Reduced space on mobile */}
-        <Hero />
-        <HumanoidSection />
-        <SpecsSection />
-        <DetailsSection />
-        <ImageShowcaseSection />
-        <Features />
-        <Testimonials />
-        <Newsletter />
-        <MadeByHumans />
+    <div className="min-h-screen bg-black">
+      <FacchiniNavbar />
+      <main>
+        <FacchiniHero />
+        <FacchiniAbout />
+        <FacchiniServices />
+        <FacchiniPortfolio />
+        <FacchiniCTA />
+        <FacchiniContact />
       </main>
-      <Footer />
+      <FacchiniFooter />
     </div>
   );
 };
