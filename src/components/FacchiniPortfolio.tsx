@@ -1,37 +1,37 @@
 import React from "react";
 
 const FacchiniPortfolio = () => {
-  // Portfolio items - replace with actual project images
+  // Portfolio items - projetos executados pela Facchini Engenharia
   const portfolioItems = [
     {
-      title: "Residencial • São Paulo",
-      image: "/lovable-uploads/22d31f51-c174-40a7-bd95-00e4ad00eaf3.png",
-      alt: "Ambiente residencial de alto padrão com marcenaria e iluminação técnica executados pela Facchini Engenharia"
+      title: "Casa Contemporânea • São Paulo",
+      image: "/portfolio/projeto-1.jpg",
+      alt: "Casa contemporânea com arquitetura moderna integrando madeira e vidro em meio à vegetação tropical"
     },
     {
-      title: "Corporativo • São Paulo",
-      image: "/lovable-uploads/af412c03-21e4-4856-82ff-d1a975dc84a9.png",
-      alt: "Espaço corporativo moderno com acabamentos premium executado pela Facchini Engenharia"
+      title: "Residência com Área Gourmet • São Paulo",
+      image: "/portfolio/projeto-2.jpg",
+      alt: "Residência de alto padrão com área gourmet integrada, piscina e pergolado em madeira"
     },
     {
-      title: "Lojas premium • São Paulo",
-      image: "/lovable-uploads/c3d5522b-6886-4b75-8ffc-d020016bb9c2.png",
-      alt: "Loja de varejo premium com design contemporâneo executada pela Facchini Engenharia"
+      title: "Casa Clássica com Piscina • São Paulo",
+      image: "/portfolio/projeto-3.jpg",
+      alt: "Casa de estilo clássico com fachada branca, piscina e paisagismo refinado"
     },
     {
-      title: "Residencial • São Paulo",
-      image: "/lovable-uploads/dc13e94f-beeb-4671-8a22-0968498cdb4c.png",
-      alt: "Área residencial de luxo com materiais nobres executada pela Facchini Engenharia"
+      title: "Banheiro Premium • São Paulo",
+      image: "/portfolio/projeto-4.jpg",
+      alt: "Banheiro de luxo com acabamentos em mármore e detalhes dourados, design sofisticado"
     },
     {
-      title: "Apartamento • São Paulo",
-      image: "/lovable-uploads/5663820f-6c97-4492-9210-9eaa1a8dc415.png",
-      alt: "Apartamento de alto padrão com acabamentos exclusivos executado pela Facchini Engenharia"
+      title: "Residência Moderna • São Paulo",
+      image: "/portfolio/projeto-5.jpg",
+      alt: "Casa moderna com linhas contemporâneas, piscina e jardim paisagístico tropical"
     },
     {
-      title: "Corporativo • São Paulo",
-      image: "/background-section1.png",
-      alt: "Ambiente corporativo sofisticado com design moderno executado pela Facchini Engenharia"
+      title: "Casa com Spa • São Paulo",
+      image: "/portfolio/projeto-6.jpg",
+      alt: "Residência contemporânea com área de spa, piscina e integração total com o jardim"
     }
   ];
 
