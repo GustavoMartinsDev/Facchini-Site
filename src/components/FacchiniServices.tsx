@@ -51,26 +51,27 @@ const FacchiniServices = () => {
           </p>
         </div>
 
-        <div className="grid gap-8 mb-12 justify-center sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className={`feature-card group hover-lift fadeIn stagger-${index + 1}`}
-            >
-              <div className="text-facchini-accent-1 mb-6 group-hover:text-facchini-accent-2 transition-colors duration-300">
-                {service.icon}
-              </div>
-              
-              <h3 className="text-xl font-semibold mb-4 text-white group-hover:text-facchini-accent-1 transition-colors duration-300">
-                {service.title}
-              </h3>
-              
-              <p className="text-facchini-text-muted leading-relaxed">
-                {service.description}
-              </p>
-            </div>
-          ))}
-        </div>
+<div className="grid gap-8 mb-12 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+  {services.map((service, index) => (
+    <div
+      key={index}
+      className={`feature-card group hover-lift fadeIn stagger-${index + 1} text-center`}
+    >
+      <div className="text-facchini-accent-1 mb-6 group-hover:text-facchini-accent-2 transition-colors duration-300 flex justify-center">
+        {service.icon}
+      </div>
+      
+      <h3 className="text-xl font-semibold mb-4 text-white group-hover:text-facchini-accent-1 transition-colors duration-300">
+        {service.title}
+      </h3>
+      
+      <p className="text-facchini-text-muted leading-relaxed">
+        {service.description}
+      </p>
+    </div>
+  ))}
+</div>
+
 
         <div className="text-center fadeIn stagger-4">
           <button
