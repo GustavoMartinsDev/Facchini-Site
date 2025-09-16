@@ -68,7 +68,10 @@ const FacchiniHero = () => {
       <div className="section-container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-         
+          <div className="space-y-8">
+            <div className="facchini-chip fadeIn stagger-1">
+            
+            </div>
             
             <h1 className="section-title fadeIn stagger-2">
               CONSTRUÇÃO DE ALTO PADRÃO
