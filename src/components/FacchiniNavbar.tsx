@@ -52,11 +52,11 @@ const FacchiniNavbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('sobre')} className="nav-link">Sobre</button>
-            <button onClick={() => scrollToSection('servicos')} className="nav-link">Serviços</button>
-            <button onClick={() => scrollToSection('portfolio')} className="nav-link">Portfólio</button>
-            <button onClick={() => scrollToSection('depoimentos')} className="nav-link">Depoimentos</button>
-            <button onClick={() => scrollToSection('contato')} className="nav-link">Contato</button>
+            <button onClick={() => scrollToSection('sobre')} className="nav-link">SOBRE</button>
+            <button onClick={() => scrollToSection('servicos')} className="nav-link">SERVIÇOS</button>
+            <button onClick={() => scrollToSection('portfolio')} className="nav-link">PORTFÓLIO</button>
+            <button onClick={() => scrollToSection('depoimentos')} className="nav-link">DEPOIMENTOS</button>
+            <button onClick={() => scrollToSection('contato')} className="nav-link">CONTATO</button>
           </div>
 
           {/* CTA Button */}
@@ -65,7 +65,7 @@ const FacchiniNavbar = () => {
               onClick={handleWhatsAppClick}
               className="button-secondary text-sm"
             >
-              Falar no WhatsApp
+              FALAR NO WHATSAPP
             </button>
           </div>
 
