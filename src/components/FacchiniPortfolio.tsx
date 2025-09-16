@@ -29,9 +29,9 @@ const FacchiniPortfolio = () => {
       alt: "Casa moderna com linhas contemporâneas, piscina e jardim paisagístico tropical"
     },
     {
-      title: "Casa com Spa • São Paulo",
+      title: "Casa na Mata • São Paulo",
       image: "/portfolio/projeto-6.jpg",
-      alt: "Residência contemporânea com área de spa, piscina e integração total com o jardim"
+      alt: "Casa moderna de múltiplos níveis integrada à mata atlântica, com piscina e vista panorâmica"
     }
   ];
 
