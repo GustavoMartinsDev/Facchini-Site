@@ -55,6 +55,7 @@ const FacchiniNavbar = () => {
             <button onClick={() => scrollToSection('sobre')} className="nav-link">Sobre</button>
             <button onClick={() => scrollToSection('servicos')} className="nav-link">Serviços</button>
             <button onClick={() => scrollToSection('portfolio')} className="nav-link">Portfólio</button>
+            <button onClick={() => scrollToSection('depoimentos')} className="nav-link">Depoimentos</button>
             <button onClick={() => scrollToSection('contato')} className="nav-link">Contato</button>
           </div>
 
@@ -84,6 +85,7 @@ const FacchiniNavbar = () => {
               <button onClick={() => scrollToSection('sobre')} className="nav-link text-left">Sobre</button>
               <button onClick={() => scrollToSection('servicos')} className="nav-link text-left">Serviços</button>
               <button onClick={() => scrollToSection('portfolio')} className="nav-link text-left">Portfólio</button>
+              <button onClick={() => scrollToSection('depoimentos')} className="nav-link text-left">Depoimentos</button>
               <button onClick={() => scrollToSection('contato')} className="nav-link text-left">Contato</button>
               <button
                 onClick={handleWhatsAppClick}

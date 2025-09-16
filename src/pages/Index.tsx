@@ -5,6 +5,7 @@ import FacchiniHero from "@/components/FacchiniHero";
 import FacchiniAbout from "@/components/FacchiniAbout";
 import FacchiniServices from "@/components/FacchiniServices";
 import FacchiniPortfolio from "@/components/FacchiniPortfolio";
+import FacchiniTestimonials from "@/components/FacchiniTestimonials";
 import FacchiniCTA from "@/components/FacchiniCTA";
 import FacchiniContact from "@/components/FacchiniContact";
 import FacchiniFooter from "@/components/FacchiniFooter";
@@ -40,6 +41,7 @@ const Index = () => {
         <FacchiniAbout />
         <FacchiniServices />
         <FacchiniPortfolio />
+        <FacchiniTestimonials />
         <FacchiniCTA />
         <FacchiniContact />
       </main>
