@@ -75,13 +75,11 @@ const FacchiniHero = () => {
             </div>
             
             <h1 className="section-title fadeIn stagger-2">
-              CONSTRUÇÃO DE ALTO PADRÃO,<br />
-              PRAZO CUMPRIDO E<br />
-              ACABAMENTO IMPECÁVEL
+              CONSTRUÇÃO DE ALTO PADRÃO
             </h1>
             
             <p className="section-subtitle fadeIn stagger-3">
-              Mais de três décadas transformando projetos em realidade.
+              31 anos de engenharia e +170 mil m² entregues com excelência.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 fadeIn stagger-4">
