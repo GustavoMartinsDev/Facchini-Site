@@ -23,11 +23,17 @@ const FacchiniServices = () => {
       title: "Lojas e varejo",
       description: "Implantação com padrão de rede e entrega no prazo acordado."
     },
+     {
+      icon: <Store className="w-8 h-8" />,
+      title: "Lojas e varejo",
+      description: "Implantação com padrão de rede e entrega no prazo acordado."
+    },
     {
       icon: <Building className="w-8 h-8" />,
       title: "Apartamentos",
       description: "Obras detalhistas com padrão de luxo do projeto à entrega."
     }
+    
   ];
 
   const handleCTAClick = () => {
