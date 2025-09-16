@@ -11,7 +11,7 @@ const FacchiniFooter = () => {
           {/* Logo */}
           <div className="mb-8">
             <div className="text-3xl font-bold text-facchini-accent-2 mb-2">
-              Facchini
+              FACCHINI
             </div>
             <div className="text-facchini-text-muted text-sm">
               Engenharia de Alto Padrão
