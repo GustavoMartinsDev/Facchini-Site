@@ -70,7 +70,7 @@ const FacchiniHero = () => {
           {/* Left Content */}
           <div className="space-y-8">
             <div className="facchini-chip fadeIn stagger-1">
-              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-facchini-accent-1 text-black mr-2 font-semibold"></span>
+            
             </div>
             
             <h1 className="section-title fadeIn stagger-2">
