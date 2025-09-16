@@ -71,7 +71,7 @@ const FacchiniHero = () => {
           <div className="space-y-8">
             <div className="facchini-chip fadeIn stagger-1">
               <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-facchini-accent-1 text-black mr-2 font-semibold">01</span>
-              Purpose
+              
             </div>
             
             <h1 className="section-title fadeIn stagger-2">
