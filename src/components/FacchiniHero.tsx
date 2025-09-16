@@ -76,8 +76,7 @@ const FacchiniHero = () => {
             
             <h1 className="section-title fadeIn stagger-2">
               CONSTRUÇÃO DE ALTO PADRÃO,<br />
-              PRAZO CUMPRIDO E<br />
-              ACABAMENTO IMPECÁVEL
+            
             </h1>
             
             <p className="section-subtitle fadeIn stagger-3">
