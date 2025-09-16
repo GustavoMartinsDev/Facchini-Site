@@ -46,7 +46,7 @@ const FacchiniNavbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="text-2xl font-bold text-facchini-accent-2">
-              Facchini
+              FACCHINI
             </div>
           </div>
 
