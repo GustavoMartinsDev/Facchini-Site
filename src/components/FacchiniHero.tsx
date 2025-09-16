@@ -79,7 +79,7 @@ const FacchiniHero = () => {
             </h1>
             
             <p className="section-subtitle fadeIn stagger-3">
-              31 anos de engenharia e +170 mil m² entregues com excelência.
+              Mais de três décadas transformando projetos em realidade.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 fadeIn stagger-4">
