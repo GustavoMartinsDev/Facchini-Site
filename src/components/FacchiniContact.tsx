@@ -254,8 +254,7 @@ const FacchiniContact = () => {
                   <div>
                     <h4 className="font-semibold text-white mb-2">Horário de atendimento</h4>
                     <p className="text-facchini-text-muted">
-                      Segunda a sexta: 8h às 18h<br />
-                      Sábado: 8h às 12h
+                      Segunda a sexta: 8h às 17h            
                     </p>
                   </div>
                 </div>
