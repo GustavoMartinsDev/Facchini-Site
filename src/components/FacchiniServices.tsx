@@ -1,5 +1,5 @@
 import React from "react";
-import { Building, Home, Store, Wrench, Briefcase, Sparkles } from "lucide-react";
+import { Building, Home, Store, Wrench, Briefcase, Sparkles, Gem } from "lucide-react";
 
 const FacchiniServices = () => {
   const services = [
