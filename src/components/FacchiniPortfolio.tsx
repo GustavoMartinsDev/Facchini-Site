@@ -29,7 +29,7 @@ const FacchiniPortfolio = () => {
       alt: "Casa moderna com linhas contemporâneas, piscina e jardim paisagístico tropical"
     },
     {
-      title: "Casa na Mata • São Paulo",
+      title: "Casa na Mata • Guarujá",
       image: "/portfolio/projeto-6.jpg",
       alt: "Casa moderna de múltiplos níveis integrada à mata atlântica, com piscina e vista panorâmica"
     }
