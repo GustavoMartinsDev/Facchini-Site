@@ -19,9 +19,9 @@ const FacchiniServices = () => {
       description: "Obras rápidas e precisas para operações exigentes."
     },
     {
-      icon: <Store className="w-8 h-8" />,
-      title: "Lojas e varejo",
-      description: "Implantação com padrão de rede e entrega no prazo acordado."
+      icon: <Gem className="w-8 h-8" />,
+      title: "Empreendimentos de Luxo",
+      description: "Execução de empreendimentos exclusivos com rigor técnico e sofisticação em cada detalhe."
     },
      {
       icon: <Sparkles className="w-8 h-8" />,
