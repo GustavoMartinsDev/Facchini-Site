@@ -21,21 +21,21 @@ const FacchiniFooter = () => {
           {/* Social Links */}
           <div className="flex justify-center space-x-6 mb-8">
             <a
-              href="#"
+              href="https://www.instagram.com/facchiniengenharia/"
               className="w-10 h-10 bg-facchini-accent-1/20 rounded-full flex items-center justify-center hover:bg-facchini-accent-1 hover:text-black transition-all duration-300"
               aria-label="Instagram"
             >
               <Instagram className="w-5 h-5" />
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/facchiniengenharia/"
               className="w-10 h-10 bg-facchini-accent-1/20 rounded-full flex items-center justify-center hover:bg-facchini-accent-1 hover:text-black transition-all duration-300"
               aria-label="Facebook"
             >
               <Facebook className="w-5 h-5" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/facchini-engenharia-ltda/?originalSubdomain=br"
               className="w-10 h-10 bg-facchini-accent-1/20 rounded-full flex items-center justify-center hover:bg-facchini-accent-1 hover:text-black transition-all duration-300"
               aria-label="LinkedIn"
             >
