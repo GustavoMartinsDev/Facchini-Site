@@ -208,11 +208,11 @@ const FacchiniContact = () => {
                   <div>
                     <h4 className="font-semibold text-white mb-2">Telefone</h4>
                     <a
-                      href="tel:+551199999999"
+                      href="tel:+551150413599"
                       onClick={handlePhoneClick}
                       className="text-facchini-accent-1 hover:text-facchini-accent-2 transition-colors"
                     >
-                      (11) 9999-9999
+                      (11) 5041-3599
                     </a>
                     <p className="text-facchini-text-muted text-sm mt-1">Horário comercial</p>
                   </div>
