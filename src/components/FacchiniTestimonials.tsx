@@ -14,37 +14,37 @@ const testimonials: Testimonial[] = [
     text: "A Facchini conduziu nossa obra de 1.200 m² com precisão cirúrgica. Prazos respeitados, comunicação transparente e acabamento impecável.",
     name: "Eduardo Martins",
     role: "CEO — Setor Financeiro",
-    image: "/lovable-uploads/22d31f51-c174-40a7-bd95-00e4ad00eaf3.png"
+    image: "/testimonials/eduardo-martins.jpg"
   },
   {
     text: "Como arquiteta, sou exigente com execução. A equipe da Facchini respeitou cada detalhe do projeto, do nível a laser ao alinhamento da marcenaria.",
     name: "Marina Assis", 
     role: "Arquiteta Autônoma",
-    image: "/lovable-uploads/5663820f-6c97-4492-9210-9eaa1a8dc415.png"
+    image: "/testimonials/marina-assis.jpg"
   },
   {
     text: "O controle de custos e o cronograma foram seguidos com disciplina. A previsibilidade reduziu nosso risco e acelerou a ocupação.",
     name: "Ricardo Vilar",
     role: "Diretor Operacional",
-    image: "/lovable-uploads/af412c03-21e4-4856-82ff-d1a975dc84a9.png"
+    image: "/testimonials/ricardo-vilar.jpg"
   },
   {
     text: "Reformamos a cobertura. A Facchini entregou padrão de luxo sem transtornos. Organização e limpeza de obra chamaram atenção.",
     name: "Patrícia Nogueira",
     role: "Cliente Residencial",
-    image: "/lovable-uploads/c3d5522b-6886-4b75-8ffc-d020016bb9c2.png"
+    image: "/testimonials/patricia-nogueira.jpg"
   },
   {
     text: "Em varejo, prazo é tudo. A loja foi entregue no dia combinado, com acabamento superior e checklist impecável.",
     name: "Thiago Lopes",
     role: "Head de Expansão — Varejo",
-    image: "/lovable-uploads/dc13e94f-beeb-4671-8a22-0968498cdb4c.png"
+    image: "/testimonials/thiago-lopes.jpg"
   },
   {
     text: "A compatibilização com nossos fornecedores foi exemplar. A sensação foi de parceria estratégica, não apenas execução.",
     name: "Camila Ferraz",
     role: "Diretora Administrativa",
-    image: "/lovable-uploads/22d31f51-c174-40a7-bd95-00e4ad00eaf3.png"
+    image: "/testimonials/camila-ferraz.jpg"
   }
 ];
 
