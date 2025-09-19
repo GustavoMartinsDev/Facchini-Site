@@ -1,63 +1,98 @@
 import React, { useState } from "react";
-import { Phone, Mail, MapPin, MessageCircle, Clock, Shield } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Clock,
+  Shield,
+} from "lucide-react";
 
 const FacchiniContact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    message: '',
-    isArchitect: false
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+    isArchitect: false,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value, type } = e.target;
-    
+
     setFormData({
       ...formData,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+      [name]:
+        type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
     });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitStatus("idle");
+    // Validação simples
+    if (!formData.name.trim() || !formData.phone.trim()) {
+      setSubmitStatus("error");
+      setIsSubmitting(false);
+      return;
+    }
     setIsSubmitting(true);
 
     // Track form submission
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'generate_lead_form_submit', {
-        page_section: 'contact',
-        lead_type: formData.isArchitect ? 'architect' : 'client'
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "generate_lead_form_submit", {
+        page_section: "contact",
+        lead_type: formData.isArchitect ? "architect" : "client",
       });
     }
 
     try {
-      // Simulate form submission - replace with actual API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setSubmitStatus('success');
-      setFormData({ name: '', phone: '', email: '', message: '', isArchitect: false });
+      const response = await fetch(
+        "https://facchini-api.vercel.app/api/send-contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": "apiDemonstração",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+      if (!response.ok) throw new Error("Erro ao enviar");
+      setSubmitStatus("success");
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        message: "",
+        isArchitect: false,
+      });
     } catch (error) {
-      setSubmitStatus('error');
+      setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const handleWhatsAppClick = () => {
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'click_whatsapp_contact', {
-        page_section: 'contact'
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "click_whatsapp_contact", {
+        page_section: "contact",
       });
     }
-    window.open('https://wa.me/5511999999999', '_blank');
+    window.open("https://wa.me/5511999999999", "_blank");
   };
 
   const handlePhoneClick = () => {
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'click_phone', {
-        page_section: 'contact'
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "click_phone", {
+        page_section: "contact",
       });
     }
   };
@@ -66,11 +101,10 @@ const FacchiniContact = () => {
     <section id="contato" className="py-24 bg-black relative">
       <div className="section-container">
         <div className="text-center mb-16">
-          <h2 className="section-title mb-6 fadeIn">
-            Fale com a Facchini
-          </h2>
+          <h2 className="section-title mb-6 fadeIn">Fale com a Facchini</h2>
           <p className="section-subtitle fadeIn stagger-1 mx-auto">
-            Preencha os dados abaixo e nossa equipe entrará em contato até o próximo dia útil.
+            Preencha os dados abaixo e nossa equipe entrará em contato até o
+            próximo dia útil.
           </p>
         </div>
 
@@ -78,7 +112,7 @@ const FacchiniContact = () => {
           {/* Contact Form */}
           <div className="fadeIn stagger-2">
             <div className="glass-card p-8">
-              {submitStatus === 'success' ? (
+              {submitStatus === "success" ? (
                 <div className="text-center p-6">
                   <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
                     <div className="text-green-400 text-2xl">✓</div>
@@ -87,7 +121,8 @@ const FacchiniContact = () => {
                     Recebemos seus dados!
                   </h3>
                   <p className="text-facchini-text-muted mb-6">
-                    Em breve falaremos com você. Se preferir o atendimento imediato, clique abaixo.
+                    Em breve falaremos com você. Se preferir o atendimento
+                    imediato, clique abaixo.
                   </p>
                   <button
                     onClick={handleWhatsAppClick}
@@ -109,7 +144,7 @@ const FacchiniContact = () => {
                       required
                       className="form-input"
                     />
-                    
+
                     <input
                       type="tel"
                       name="phone"
@@ -120,7 +155,7 @@ const FacchiniContact = () => {
                       className="form-input"
                     />
                   </div>
-                  
+
                   <input
                     type="email"
                     name="email"
@@ -129,7 +164,7 @@ const FacchiniContact = () => {
                     onChange={handleInputChange}
                     className="form-input"
                   />
-                  
+
                   <textarea
                     name="message"
                     placeholder="Descreva seu projeto ou necessidade"
@@ -137,7 +172,7 @@ const FacchiniContact = () => {
                     onChange={handleInputChange}
                     className="form-textarea"
                   />
-                  
+
                   <div className="flex items-center">
                     <input
                       type="checkbox"
@@ -147,19 +182,22 @@ const FacchiniContact = () => {
                       onChange={handleInputChange}
                       className="mr-3 w-4 h-4 text-facchini-accent-1 bg-transparent border-facchini-divider rounded focus:ring-facchini-accent-1"
                     />
-                    <label htmlFor="isArchitect" className="text-facchini-text-muted text-sm">
+                    <label
+                      htmlFor="isArchitect"
+                      className="text-facchini-text-muted text-sm"
+                    >
                       Sou arquiteto(a) - prioridade no atendimento
                     </label>
                   </div>
-                  
+
                   <button
                     type="submit"
                     disabled={isSubmitting}
                     className="button-primary w-full"
                   >
-                    {isSubmitting ? 'Enviando...' : 'Enviar e receber contato'}
+                    {isSubmitting ? "Enviando..." : "Enviar e receber contato"}
                   </button>
-                  
+
                   <div className="flex items-center justify-center pt-4">
                     <Shield className="w-4 h-4 text-facchini-accent-1 mr-2" />
                     <p className="text-xs text-facchini-text-muted">
@@ -169,9 +207,10 @@ const FacchiniContact = () => {
                 </form>
               )}
 
-              {submitStatus === 'error' && (
+              {submitStatus === "error" && (
                 <div className="text-red-400 text-sm text-center mt-4 p-4 bg-red-500/10 rounded-lg">
-                  Não foi possível enviar. Revise os campos obrigatórios e tente novamente.
+                  Não foi possível enviar. Revise os campos obrigatórios e tente
+                  novamente.
                 </div>
               )}
             </div>
@@ -183,7 +222,7 @@ const FacchiniContact = () => {
               <h3 className="text-2xl font-semibold text-white mb-8">
                 Outros canais de contato
               </h3>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="w-12 h-12 bg-facchini-accent-1/20 rounded-full flex items-center justify-center mr-4 mt-1">
@@ -197,7 +236,9 @@ const FacchiniContact = () => {
                     >
                       (11) 9 9999-9999
                     </button>
-                    <p className="text-facchini-text-muted text-sm mt-1">Atendimento rápido e direto</p>
+                    <p className="text-facchini-text-muted text-sm mt-1">
+                      Atendimento rápido e direto
+                    </p>
                   </div>
                 </div>
 
@@ -214,7 +255,9 @@ const FacchiniContact = () => {
                     >
                       (11) 5041-3599
                     </a>
-                    <p className="text-facchini-text-muted text-sm mt-1">Horário comercial</p>
+                    <p className="text-facchini-text-muted text-sm mt-1">
+                      Horário comercial
+                    </p>
                   </div>
                 </div>
 
@@ -230,7 +273,9 @@ const FacchiniContact = () => {
                     >
                       contato@facchiniengenharia.com.br
                     </a>
-                    <p className="text-facchini-text-muted text-sm mt-1">Resposta em até 24h</p>
+                    <p className="text-facchini-text-muted text-sm mt-1">
+                      Resposta em até 24h
+                    </p>
                   </div>
                 </div>
 
@@ -241,7 +286,8 @@ const FacchiniContact = () => {
                   <div>
                     <h4 className="font-semibold text-white mb-2">Endereço</h4>
                     <p className="text-facchini-text-muted">
-                      São Paulo, SP<br />
+                      São Paulo, SP
+                      <br />
                       Atendemos toda a Grande São Paulo
                     </p>
                   </div>
@@ -252,9 +298,11 @@ const FacchiniContact = () => {
                     <Clock className="w-6 h-6 text-facchini-accent-1" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-2">Horário de atendimento</h4>
+                    <h4 className="font-semibold text-white mb-2">
+                      Horário de atendimento
+                    </h4>
                     <p className="text-facchini-text-muted">
-                      Segunda a sexta: 8h às 17h            
+                      Segunda a sexta: 8h às 17h
                     </p>
                   </div>
                 </div>
