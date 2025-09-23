@@ -59,7 +59,7 @@ const FacchiniContact = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "x-api-key": "apiDemonstração",
+            "x-api-key": process.env.CONTACT_API_KEY || "",
           },
           body: JSON.stringify(formData),
         }
