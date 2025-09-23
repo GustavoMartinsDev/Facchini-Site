@@ -1,7 +1,60 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
+const FACCHINI_FOUNDING_DATE = "1993-08-24";
+
 const FacchiniCTA = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [counter, setCounter] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  const calculateYearsOfExperience = () => {
+    const dateNow = new Date();
+    const foundingDate = new Date(FACCHINI_FOUNDING_DATE);
+    return dateNow.getFullYear() - foundingDate.getFullYear();
+  };
+
+  const yearsOfExperience = calculateYearsOfExperience();
+
+  const animateCounter = () => {
+    const duration = 2000; // 2 seconds
+    const steps = 60; // 60 FPS
+    const stepDuration = duration / steps;
+    let currentStep = 0;
+
+    const interval = setInterval(() => {
+      currentStep++;
+      const progress = currentStep / steps;
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      
+      setCounter(Math.round(yearsOfExperience * easeOutQuart));
+
+      if (currentStep >= steps) {
+        clearInterval(interval);
+      }
+    }, stepDuration);
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+            animateCounter();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
   const handleWhatsAppClick = () => {
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("event", "click_whatsapp_cta", {
@@ -19,7 +72,10 @@ const FacchiniCTA = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
+    <section 
+      ref={sectionRef}
+      className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden"
+    >
       {/* Background decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-facchini-accent-1/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-facchini-accent-2/5 rounded-full blur-3xl"></div>
@@ -35,7 +91,7 @@ const FacchiniCTA = () => {
 
           <p className="text-xl text-facchini-text-muted mb-12 fadeIn stagger-1">
             Transforme sua visão em realidade com a experiência de quem entrega
-            resultados há 31 anos.
+            resultados há {counter} anos.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center fadeIn stagger-2">
@@ -60,7 +116,7 @@ const FacchiniCTA = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-16 border-t border-facchini-divider fadeIn stagger-3">
             <div className="text-center">
               <div className="text-2xl font-bold text-facchini-accent-1 mb-2">
-                31 anos
+                {counter} anos
               </div>
               <div className="text-facchini-text-muted">
                 de tradição e experiência
