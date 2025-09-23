@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { MessageCircle, Shield } from "lucide-react";
+import { sendContact } from "@/api/contact";
 
 interface ContactFormProps {
   namePlaceholder?: string;
@@ -72,19 +73,9 @@ const ContactForm = ({
     }
 
     try {
-      const response = await fetch(
-        "https://facchini-api.vercel.app/api/send-contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": process.env.CONTACT_API_KEY,
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const result = await sendContact(formData);
 
-      if (!response.ok) throw new Error("Erro ao enviar");
+      if (!result.ok) throw new Error(result.error);
       setSubmitStatus("success");
       setFormData({
         name: "",
@@ -94,6 +85,7 @@ const ContactForm = ({
         isArchitect: false,
       });
     } catch (error) {
+      console.error("Erro ao enviar formulário:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
