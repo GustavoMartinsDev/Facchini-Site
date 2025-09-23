@@ -53,17 +53,46 @@ const FacchiniContact = () => {
     }
 
     try {
-      const response = await fetch(
-        "https://facchini-api.vercel.app/api/send-contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": "apiDemonstração",
-          },
-          body: JSON.stringify(formData),
-        }
+      const FACCHINI_COLOR = "#F5B301";
+
+      const html = `
+        <div style="background: #111; color: #fff; font-family: Arial, sans-serif; border-radius: 12px; padding: 32px; max-width: 500px; margin: auto;">
+          <h2 style="color: ${FACCHINI_COLOR}; margin-bottom: 24px;">Novo contato Facchini</h2>
+          <p><strong>Nome:</strong> ${formData.name}</p>
+          <p><strong>Telefone:</strong> ${formData.phone}</p>
+          <p><strong>E-mail:</strong> ${formData.email}</p>
+          <p><strong>Mensagem:</strong><br/>${formData.message}</p>
+          <p><strong>Tipo de lead:</strong> ${
+            formData.isArchitect ? "Arquiteto(a)" : "Cliente"
+          }</p>
+          <hr style="border-color: ${FACCHINI_COLOR}; margin: 24px 0;" />
+          <p style="font-size: 12px; color: #aaa;">Facchini Engenharia - contato gerado pelo site</p>
+        </div>
+      `;
+
+      const formSubmitData = new FormData();
+      formSubmitData.append("name", formData.name);
+      formSubmitData.append("phone", formData.phone);
+      formSubmitData.append("email", formData.email);
+      formSubmitData.append("message", formData.message);
+      formSubmitData.append(
+        "isArchitect",
+        formData.isArchitect ? "Sim" : "Não"
       );
+      formSubmitData.append("_subject", "Novo contato recebido pelo site");
+      formSubmitData.append("_captcha", "false");
+      formSubmitData.append("_template", "basic");
+      formSubmitData.append("_html", html);
+
+      // CC para arquitetos (similar ao modelo da API)
+      if (formData.isArchitect) {
+        formSubmitData.append("_cc", "gustavomartins.developer@gmail.com");
+      }
+      const response = await fetch("https://formsubmit.co/gutofm10@gmail.com", {
+        method: "POST",
+        body: formSubmitData,
+      });
+
       if (!response.ok) throw new Error("Erro ao enviar");
       setSubmitStatus("success");
       setFormData({
