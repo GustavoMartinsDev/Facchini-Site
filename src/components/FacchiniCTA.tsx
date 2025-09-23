@@ -26,7 +26,7 @@ const FacchiniCTA = () => {
       currentStep++;
       const progress = currentStep / steps;
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      
+
       setCounter(Math.round(yearsOfExperience * easeOutQuart));
 
       if (currentStep >= steps) {
@@ -72,7 +72,7 @@ const FacchiniCTA = () => {
   };
 
   return (
-    <section 
+    <section
       ref={sectionRef}
       className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden"
     >
