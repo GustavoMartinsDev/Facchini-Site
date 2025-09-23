@@ -18,12 +18,6 @@ const FacchiniCTA = () => {
     }
   };
 
-  // Ano de fundação da Facchini
-  const foundingYear = 1994;
-  const foundingDate = `Desde ${foundingYear}`;
-  const currentYear = new Date().getFullYear();
-  const years = currentYear - foundingYear;
-
   return (
     <section className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
       {/* Background decorative elements */}
@@ -41,7 +35,7 @@ const FacchiniCTA = () => {
 
           <p className="text-xl text-facchini-text-muted mb-12 fadeIn stagger-1">
             Transforme sua visão em realidade com a experiência de quem entrega
-            resultados há {years} anos.
+            resultados há 31 anos.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center fadeIn stagger-2">
@@ -66,16 +60,17 @@ const FacchiniCTA = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-16 border-t border-facchini-divider fadeIn stagger-3">
             <div className="text-center">
               <div className="text-2xl font-bold text-facchini-accent-1 mb-2">
-                {years} anos
+                31 anos
               </div>
               <div className="text-facchini-text-muted">
-                {foundingDate} — tradição e experiência
+                de tradição e experiência
               </div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-facchini-accent-1 mb-2">
                 +170k m²
               </div>
+
               <div className="text-facchini-text-muted">entregues no prazo</div>
             </div>
             <div className="text-center">
