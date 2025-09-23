@@ -5,7 +5,7 @@ const api = axios.create({
   baseURL: "https://facchini-api.vercel.app/api",
   headers: {
     "Content-Type": "application/json",
-    "x-api-key": import.meta.env.VITE_CONTACT_API_KEY,
+    "x-api-key": import.meta.env.CONTACT_API_KEY,
   },
 });
 
