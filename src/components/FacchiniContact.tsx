@@ -88,10 +88,13 @@ const FacchiniContact = () => {
       if (formData.isArchitect) {
         formSubmitData.append("_cc", "gustavomartins.developer@gmail.com");
       }
-      const response = await fetch("https://formsubmit.co/gutofm10@gmail.com", {
-        method: "POST",
-        body: formSubmitData,
-      });
+      const response = await fetch(
+        "https://formsubmit.co/36aec6d4572573a8a7a8b1e705c896 74",
+        {
+          method: "POST",
+          body: formSubmitData,
+        }
+      );
 
       if (!response.ok) throw new Error("Erro ao enviar");
       setSubmitStatus("success");
