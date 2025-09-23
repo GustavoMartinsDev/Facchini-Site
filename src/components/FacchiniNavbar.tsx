@@ -19,8 +19,8 @@ const FacchiniNavbar = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -35,7 +35,10 @@ const FacchiniNavbar = () => {
 
             const animate = (timestamp: number) => {
               if (!startTimestamp) startTimestamp = timestamp;
-              const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+              const progress = Math.min(
+                (timestamp - startTimestamp) / duration,
+                1
+              );
               const easeOutQuart = 1 - Math.pow(1 - progress, 4);
               setCounter(Math.round(yearsOfExperience * easeOutQuart));
 
@@ -61,30 +64,36 @@ const FacchiniNavbar = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
       setIsMobileMenuOpen(false);
     }
   };
 
   const handleWhatsAppClick = () => {
     // Track event
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'click_whatsapp_header', {
-        page_section: 'header'
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "click_whatsapp_header", {
+        page_section: "header",
       });
     }
-    window.open('https://wa.me/5511999999999', '_blank');
+    window.open("https://wa.me/5511999999999", "_blank");
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-black/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-    }`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "bg-black/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+      }`}
+    >
       {/* Optional topbar */}
-      <div ref={topbarRef} className="hidden lg:block bg-facchini-accent-1 text-black text-center py-2 text-sm">
-        {counter} anos de obras entregues com excelência • +170 mil m² executados
+      <div
+        ref={topbarRef}
+        className="hidden lg:block bg-facchini-accent-1 text-black text-center py-2 text-sm"
+      >
+        {counter} anos de obras entregues com excelência • +170 mil m²
+        executados
       </div>
-      
+
       <div className="section-container">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
@@ -96,11 +105,36 @@ const FacchiniNavbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('sobre')} className="nav-link">SOBRE</button>
-            <button onClick={() => scrollToSection('servicos')} className="nav-link">SERVIÇOS</button>
-            <button onClick={() => scrollToSection('portfolio')} className="nav-link">PORTFÓLIO</button>
-            <button onClick={() => scrollToSection('depoimentos')} className="nav-link">DEPOIMENTOS</button>
-            <button onClick={() => scrollToSection('contato')} className="nav-link">CONTATO</button>
+            <button
+              onClick={() => scrollToSection("sobre")}
+              className="nav-link"
+            >
+              SOBRE
+            </button>
+            <button
+              onClick={() => scrollToSection("servicos")}
+              className="nav-link"
+            >
+              SERVIÇOS
+            </button>
+            <button
+              onClick={() => scrollToSection("portfolio")}
+              className="nav-link"
+            >
+              PORTFÓLIO
+            </button>
+            <button
+              onClick={() => scrollToSection("depoimentos")}
+              className="nav-link"
+            >
+              DEPOIMENTOS
+            </button>
+            <button
+              onClick={() => scrollToSection("contato")}
+              className="nav-link"
+            >
+              CONTATO
+            </button>
           </div>
 
           {/* CTA Button */}
@@ -126,11 +160,36 @@ const FacchiniNavbar = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-black/95 backdrop-blur-md rounded-lg mt-2 p-4">
             <div className="flex flex-col space-y-4">
-              <button onClick={() => scrollToSection('sobre')} className="nav-link text-left">Sobre</button>
-              <button onClick={() => scrollToSection('servicos')} className="nav-link text-left">Serviços</button>
-              <button onClick={() => scrollToSection('portfolio')} className="nav-link text-left">Portfólio</button>
-              <button onClick={() => scrollToSection('depoimentos')} className="nav-link text-left">Depoimentos</button>
-              <button onClick={() => scrollToSection('contato')} className="nav-link text-left">Contato</button>
+              <button
+                onClick={() => scrollToSection("sobre")}
+                className="nav-link text-left"
+              >
+                Sobre
+              </button>
+              <button
+                onClick={() => scrollToSection("servicos")}
+                className="nav-link text-left"
+              >
+                Serviços
+              </button>
+              <button
+                onClick={() => scrollToSection("portfolio")}
+                className="nav-link text-left"
+              >
+                Portfólio
+              </button>
+              <button
+                onClick={() => scrollToSection("depoimentos")}
+                className="nav-link text-left"
+              >
+                Depoimentos
+              </button>
+              <button
+                onClick={() => scrollToSection("contato")}
+                className="nav-link text-left"
+              >
+                Contato
+              </button>
               <button
                 onClick={handleWhatsAppClick}
                 className="button-secondary text-sm mt-4"
