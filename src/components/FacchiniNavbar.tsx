@@ -1,9 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 
 const FacchiniNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [counter, setCounter] = useState(0);
+  const topbarRef = useRef<HTMLDivElement>(null);
+  const hasAnimated = useRef(false);
+
+  const calculateYearsOfExperience = () => {
+    const foundingYear = 1994;
+    const currentYear = new Date().getFullYear();
+    return currentYear - foundingYear;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +21,41 @@ const FacchiniNavbar = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const yearsOfExperience = calculateYearsOfExperience();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated.current) {
+            hasAnimated.current = true;
+            let startTimestamp: number | null = null;
+            const duration = 2000; // 2 seconds
+
+            const animate = (timestamp: number) => {
+              if (!startTimestamp) startTimestamp = timestamp;
+              const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+              const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+              setCounter(Math.round(yearsOfExperience * easeOutQuart));
+
+              if (progress < 1) {
+                requestAnimationFrame(animate);
+              }
+            };
+
+            requestAnimationFrame(animate);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (topbarRef.current) {
+      observer.observe(topbarRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -37,8 +81,8 @@ const FacchiniNavbar = () => {
       isScrolled ? 'bg-black/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
       {/* Optional topbar */}
-      <div className="hidden lg:block bg-facchini-accent-1 text-black text-center py-2 text-sm">
-        31 anos de obras entregues com excelência • +170 mil m² executados
+      <div ref={topbarRef} className="hidden lg:block bg-facchini-accent-1 text-black text-center py-2 text-sm">
+        {counter} anos de obras entregues com excelência • +170 mil m² executados
       </div>
       
       <div className="section-container">
