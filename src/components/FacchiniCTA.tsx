@@ -3,8 +3,8 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 
 const FacchiniCTA = () => {
   const handleWhatsAppClick = () => {
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("event", "click_whatsapp_cta", {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "click_whatsapp_cta", {
         page_section: "cta_banner",
       });
     }
