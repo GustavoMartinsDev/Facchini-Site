@@ -9,9 +9,13 @@ const FacchiniNavbar = () => {
   const hasAnimated = useRef(false);
 
   const calculateYearsOfExperience = () => {
-    const foundingYear = 1994;
-    const currentYear = new Date().getFullYear();
-    return currentYear - foundingYear;
+    const dateFounded = "1993-08-24";
+    const currentDate = new Date();
+    const foundingDate = new Date(dateFounded);
+    return Math.floor(
+      (currentDate.getTime() - foundingDate.getTime()) /
+        (1000 * 60 * 60 * 24 * 365.25)
+    );
   };
 
   useEffect(() => {
