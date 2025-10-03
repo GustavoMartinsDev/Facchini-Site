@@ -17,7 +17,7 @@ const FacchiniContact = () => {
         page_section: "contact",
       });
     }
-    window.open("https://wa.me/5511999999999", "_blank");
+    window.open("https://wa.me/5511917110573", "_blank");
   };
 
   return (

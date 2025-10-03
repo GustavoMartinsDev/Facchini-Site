@@ -61,7 +61,7 @@ const FacchiniCTA = () => {
         page_section: "cta_banner",
       });
     }
-    window.open("https://wa.me/5511999999999", "_blank");
+    window.open("https://wa.me/5511917110573", "_blank");
   };
 
   const handleFormClick = () => {
