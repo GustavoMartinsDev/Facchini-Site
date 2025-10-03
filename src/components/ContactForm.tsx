@@ -98,7 +98,10 @@ const ContactForm = ({
         page_section: pageName,
       });
     }
-    window.open("https://wa.me/5511917110573", "_blank");
+    const message =
+      "Olá! Gostaria de solicitar um orçamento para meu projeto de construção/reforma. Podem me ajudar?";
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/5511917110573?text=${encodedMessage}`, "_blank");
   };
 
   return (
