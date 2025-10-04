@@ -14,36 +14,48 @@ const FacchiniServices = () => {
     {
       icon: <Home className="w-8 h-8" />,
       title: "Residencial de alto padrão",
+      titleKey: "service1Title",
       description:
         "Execução completa com controle técnico e acabamento impecável.",
+      descriptionKey: "service1Description",
     },
     {
       icon: <Wrench className="w-8 h-8" />,
       title: "Reformas premium",
+      titleKey: "service2Title",
       description:
         "Modernização com gestão de prazos e mínima interferência na rotina.",
+      descriptionKey: "service2Description",
     },
     {
       icon: <Briefcase className="w-8 h-8" />,
       title: "Compromisso com cliente",
+      titleKey: "service3Title",
       description: "Precisão, eficiência e excelência absoluta.",
+      descriptionKey: "service3Description",
     },
     {
       icon: <Gem className="w-8 h-8" />,
       title: "Empreendimentos de Luxo",
+      titleKey: "service4Title",
       description:
         "Execução de empreendimentos exclusivos com rigor técnico e sofisticação em cada detalhe.",
+      descriptionKey: "service4Description",
     },
     {
       icon: <Sparkles className="w-8 h-8" />,
       title: "Projetos especiais",
+      titleKey: "service5Title",
       description:
         "Obras personalizadas sob medida para clientes que buscam exclusividade em cada detalhe.",
+      descriptionKey: "service5Description",
     },
     {
       icon: <Building className="w-8 h-8" />,
       title: "Apartamentos",
+      titleKey: "service6Title",
       description: "Obras detalhistas com padrão de luxo do projeto à entrega.",
+      descriptionKey: "service6Description",
     },
   ];
 
@@ -60,8 +72,16 @@ const FacchiniServices = () => {
 
       <div className="section-container relative z-10">
         <div className="text-center mb-16">
-          <h2 className="section-title mb-6 fadeIn">Especialidades</h2>
-          <p className="section-subtitle fadeIn stagger-1 mx-auto">
+          <h2
+            className="section-title mb-6 fadeIn"
+            data-translate="servicesTitle"
+          >
+            Especialidades
+          </h2>
+          <p
+            className="section-subtitle fadeIn stagger-1 mx-auto"
+            data-translate="servicesSubtitle"
+          >
             Soluções completas em construção e reforma para projetos de alto
             padrão
           </p>
@@ -79,11 +99,17 @@ const FacchiniServices = () => {
                 {service.icon}
               </div>
 
-              <h3 className="text-xl font-semibold mb-4 text-white group-hover:text-facchini-accent-1 transition-colors duration-300">
+              <h3
+                className="text-xl font-semibold mb-4 text-white group-hover:text-facchini-accent-1 transition-colors duration-300"
+                data-translate={service.titleKey}
+              >
                 {service.title}
               </h3>
 
-              <p className="text-facchini-text-muted leading-relaxed">
+              <p
+                className="text-facchini-text-muted leading-relaxed"
+                data-translate={service.descriptionKey}
+              >
                 {service.description}
               </p>
             </div>
@@ -94,6 +120,7 @@ const FacchiniServices = () => {
           <button
             onClick={handleCTAClick}
             className="button-secondary hover:bg-facchini-accent-1 hover:text-black"
+            data-translate="servicesButton"
           >
             Solicitar proposta
           </button>

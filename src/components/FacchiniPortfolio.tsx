@@ -4,34 +4,34 @@ const FacchiniPortfolio = () => {
   // Portfolio items - projetos executados pela Facchini Engenharia
   const portfolioItems = [
     {
-      title: "Residência Luxuosa com Piscina • São Paulo",
+      titleKey: "portfolio1Title",
       image: "/portfolio/projeto-1.jpeg",
-      alt: "Residência de alto padrão com piscina iluminada ao entardecer, arquitetura moderna com amplas aberturas e integração com jardim",
+      altKey: "portfolio1Alt",
     },
     {
-      title: "Casa Contemporânea com Área de Lazer • São Paulo",
+      titleKey: "portfolio2Title",
       image: "/portfolio/projeto-2.jpeg",
-      alt: "Casa moderna com piscina e área de lazer integrada, muros de concreto aparente e paisagismo contemporâneo",
+      altKey: "portfolio2Alt",
     },
     {
-      title: "Residência Integrada à Natureza • São Paulo",
+      titleKey: "portfolio3Title",
       image: "/portfolio/projeto-3.jpeg",
-      alt: "Casa moderna com estrutura em múltiplos níveis integrada à vegetação nativa, com grandes árvores preservadas no projeto",
+      altKey: "portfolio3Alt",
     },
     {
-      title: "Sala de Estar Contemporânea • São Paulo",
+      titleKey: "portfolio4Title",
       image: "/portfolio/projeto-4.jpeg",
-      alt: "Ambiente interno sofisticado com móveis de design, parede de tijolo aparente e integração com área externa",
+      altKey: "portfolio4Alt",
     },
     {
-      title: "Sala de Estar Premium com Home Theater • São Paulo",
+      titleKey: "portfolio5Title",
       image: "/portfolio/projeto-5.jpeg",
-      alt: "Sala de estar luxuosa com painel de TV integrado, móveis planejados em madeira e iluminação ambiente sofisticada",
+      altKey: "portfolio5Alt",
     },
     {
-      title: "Quarto Infantil Planejado • São Paulo",
+      titleKey: "portfolio6Title",
       image: "/portfolio/projeto-6.jpeg",
-      alt: "Dormitório infantil com móveis planejados em tons neutros, área de estudos e brincadeiras com design funcional e acolhedor",
+      altKey: "portfolio6Alt",
     },
   ];
 
@@ -56,8 +56,16 @@ const FacchiniPortfolio = () => {
     <section id="portfolio" className="py-24 bg-black relative">
       <div className="section-container">
         <div className="text-center mb-16">
-          <h2 className="section-title mb-6 fadeIn">Portfólio selecionado</h2>
-          <p className="section-subtitle fadeIn stagger-1 mx-auto">
+          <h2
+            className="section-title mb-6 fadeIn"
+            data-translate="portfolioTitle"
+          >
+            Portfólio selecionado
+          </h2>
+          <p
+            className="section-subtitle fadeIn stagger-1 mx-auto"
+            data-translate="portfolioSubtitle"
+          >
             Uma curadoria dos nossos projetos mais representativos
           </p>
         </div>
@@ -74,14 +82,18 @@ const FacchiniPortfolio = () => {
               <div className="relative overflow-hidden rounded-2xl bg-gray-800 hover-lift">
                 <img
                   src={item.image}
-                  alt={item.alt}
+                  alt=""
+                  data-translate={item.altKey}
                   className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-white font-semibold text-lg mb-2">
-                    {item.title}
+                  <h3
+                    className="text-white font-semibold text-lg mb-2"
+                    data-translate={item.titleKey}
+                  >
+                    Título do Projeto
                   </h3>
                   <div className="w-12 h-1 bg-facchini-accent-1 rounded-full"></div>
                 </div>
@@ -94,6 +106,7 @@ const FacchiniPortfolio = () => {
           <button
             onClick={handleCTAClick}
             className="button-primary text-lg px-8 py-4"
+            data-translate="portfolioButton"
           >
             Quero transformar meu projeto
           </button>

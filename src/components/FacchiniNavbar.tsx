@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
+import { LanguageSelector } from "./LanguageSelector";
+import { languageManager } from "../lib/translations";
 
 const FacchiniNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -80,8 +82,7 @@ const FacchiniNavbar = () => {
         page_section: "header",
       });
     }
-    const message =
-      "Olá! Gostaria de solicitar um orçamento para meu projeto de construção/reforma. Podem me ajudar?";
+    const message = languageManager.getWhatsAppMessage("contact");
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/5511917110573?text=${encodedMessage}`, "_blank");
   };
@@ -97,8 +98,10 @@ const FacchiniNavbar = () => {
         ref={topbarRef}
         className="hidden lg:block bg-facchini-accent-1 text-black text-center py-2 text-sm"
       >
-        {counter} anos de obras entregues com excelência • +170 mil m²
-        executados
+        {counter}{" "}
+        <span data-translate="navTopbar">
+          anos de obras entregues com excelência • +170 mil m² executados
+        </span>
       </div>
 
       <div className="section-container">
@@ -115,40 +118,47 @@ const FacchiniNavbar = () => {
             <button
               onClick={() => scrollToSection("sobre")}
               className="nav-link"
+              data-translate="navAbout"
             >
               SOBRE
             </button>
             <button
               onClick={() => scrollToSection("servicos")}
               className="nav-link"
+              data-translate="navServices"
             >
               SERVIÇOS
             </button>
             <button
               onClick={() => scrollToSection("portfolio")}
               className="nav-link"
+              data-translate="navPortfolio"
             >
               PORTFÓLIO
             </button>
             <button
               onClick={() => scrollToSection("depoimentos")}
               className="nav-link"
+              data-translate="navTestimonials"
             >
               DEPOIMENTOS
             </button>
             <button
               onClick={() => scrollToSection("contato")}
               className="nav-link"
+              data-translate="navContact"
             >
               CONTATO
             </button>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Language Selector & CTA Button */}
+          <div className="hidden md:flex items-center gap-4">
+            <LanguageSelector />
             <button
               onClick={handleWhatsAppClick}
               className="button-secondary text-sm"
+              data-translate="navWhatsApp"
             >
               FALAR NO WHATSAPP
             </button>
@@ -167,39 +177,50 @@ const FacchiniNavbar = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-black/95 backdrop-blur-md rounded-lg mt-2 p-4">
             <div className="flex flex-col space-y-4">
+              {/* Language Selector for Mobile */}
+              <div className="mb-2">
+                <LanguageSelector />
+              </div>
+
               <button
                 onClick={() => scrollToSection("sobre")}
                 className="nav-link text-left"
+                data-translate="navAbout"
               >
                 Sobre
               </button>
               <button
                 onClick={() => scrollToSection("servicos")}
                 className="nav-link text-left"
+                data-translate="navServices"
               >
                 Serviços
               </button>
               <button
                 onClick={() => scrollToSection("portfolio")}
                 className="nav-link text-left"
+                data-translate="navPortfolio"
               >
-                Portfólio
+                Portifólio
               </button>
               <button
                 onClick={() => scrollToSection("depoimentos")}
                 className="nav-link text-left"
+                data-translate="navTestimonials"
               >
                 Depoimentos
               </button>
               <button
                 onClick={() => scrollToSection("contato")}
                 className="nav-link text-left"
+                data-translate="navContact"
               >
                 Contato
               </button>
               <button
                 onClick={handleWhatsAppClick}
                 className="button-secondary text-sm mt-4"
+                data-translate="navWhatsApp"
               >
                 Falar no WhatsApp
               </button>

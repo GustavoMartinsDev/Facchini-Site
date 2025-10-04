@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MessageCircle, Shield } from "lucide-react";
 import { sendContact } from "@/api/contact";
+import { languageManager } from "../lib/translations";
 
 interface ContactFormProps {
   namePlaceholder?: string;
@@ -98,8 +99,7 @@ const ContactForm = ({
         page_section: pageName,
       });
     }
-    const message =
-      "Olá! Gostaria de solicitar um orçamento para meu projeto de construção/reforma. Podem me ajudar?";
+    const message = languageManager.getWhatsAppMessage("contact");
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/5511917110573?text=${encodedMessage}`, "_blank");
   };
@@ -111,16 +111,26 @@ const ContactForm = ({
           <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
             <div className="text-green-400 text-2xl">✓</div>
           </div>
-          <h3 className="text-xl font-semibold text-white mb-4">
+          <h3
+            className="text-xl font-semibold text-white mb-4"
+            data-translate="formSuccessTitle"
+          >
             {successTitle}
           </h3>
-          <p className="text-facchini-text-muted mb-6">{successMessage}</p>
+          <p
+            className="text-facchini-text-muted mb-6"
+            data-translate="formSuccessMessage"
+          >
+            {successMessage}
+          </p>
           <button
             onClick={handleWhatsAppClick}
             className="button-primary w-full flex items-center justify-center"
           >
             <MessageCircle className="mr-2 w-5 h-5" />
-            {whatsappButtonText}
+            <span data-translate="formWhatsAppButton">
+              {whatsappButtonText}
+            </span>
           </button>
         </div>
       ) : (
@@ -134,6 +144,7 @@ const ContactForm = ({
               onChange={handleInputChange}
               required
               className="form-input"
+              data-translate="formNamePlaceholder"
             />
 
             <input
@@ -144,6 +155,7 @@ const ContactForm = ({
               onChange={handleInputChange}
               required
               className="form-input"
+              data-translate="formPhonePlaceholder"
             />
           </div>
 
@@ -154,6 +166,7 @@ const ContactForm = ({
             value={formData.email}
             onChange={handleInputChange}
             className="form-input"
+            data-translate="formEmailPlaceholder"
           />
 
           <textarea
@@ -162,6 +175,7 @@ const ContactForm = ({
             value={formData.message}
             onChange={handleInputChange}
             className="form-textarea"
+            data-translate="formMessagePlaceholder"
           />
 
           {showArchitectCheckbox && (
@@ -177,6 +191,7 @@ const ContactForm = ({
               <label
                 htmlFor="isArchitect"
                 className="text-facchini-text-muted text-sm"
+                data-translate="formArchitectLabel"
               >
                 {architectLabel}
               </label>
@@ -188,12 +203,21 @@ const ContactForm = ({
             disabled={isSubmitting}
             className="button-primary w-full"
           >
-            {isSubmitting ? "Enviando..." : submitButtonText}
+            <span
+              data-translate={
+                isSubmitting ? "formSubmittingText" : "formSubmitButton"
+              }
+            >
+              {isSubmitting ? "Enviando..." : submitButtonText}
+            </span>
           </button>
 
           <div className="flex items-center justify-center pt-4">
             <Shield className="w-4 h-4 text-facchini-accent-1 mr-2" />
-            <p className="text-xs text-facchini-text-muted">
+            <p
+              className="text-xs text-facchini-text-muted"
+              data-translate="formPrivacyText"
+            >
               Nunca compartilhamos seus dados com terceiros.
             </p>
           </div>
@@ -201,7 +225,10 @@ const ContactForm = ({
       )}
 
       {submitStatus === "error" && (
-        <div className="text-red-400 text-sm text-center mt-4 p-4 bg-red-500/10 rounded-lg">
+        <div
+          className="text-red-400 text-sm text-center mt-4 p-4 bg-red-500/10 rounded-lg"
+          data-translate="formErrorMessage"
+        >
           Não foi possível enviar. Revise os campos obrigatórios e tente
           novamente.
         </div>

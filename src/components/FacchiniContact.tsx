@@ -1,6 +1,7 @@
 import React from "react";
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 import ContactForm from "./ContactForm";
+import { languageManager } from "../lib/translations";
 
 const FacchiniContact = () => {
   const handlePhoneClick = () => {
@@ -17,8 +18,7 @@ const FacchiniContact = () => {
         page_section: "contact",
       });
     }
-    const message =
-      "Olá! Gostaria de solicitar um orçamento para meu projeto de construção/reforma. Podem me ajudar?";
+    const message = languageManager.getWhatsAppMessage("contact");
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/5511917110573?text=${encodedMessage}`, "_blank");
   };
@@ -27,8 +27,16 @@ const FacchiniContact = () => {
     <section id="contato" className="py-24 bg-black relative">
       <div className="section-container">
         <div className="text-center mb-16">
-          <h2 className="section-title mb-6 fadeIn">Fale com a Facchini</h2>
-          <p className="section-subtitle fadeIn stagger-1 mx-auto">
+          <h2
+            className="section-title mb-6 fadeIn"
+            data-translate="contactTitle"
+          >
+            Fale com a Facchini
+          </h2>
+          <p
+            className="section-subtitle fadeIn stagger-1 mx-auto"
+            data-translate="contactSubtitle"
+          >
             Preencha os dados abaixo e nossa equipe entrará em contato até o
             próximo dia útil.
           </p>
@@ -49,7 +57,10 @@ const FacchiniContact = () => {
           {/* Contact Information */}
           <div className="space-y-8 fadeIn stagger-3">
             <div>
-              <h3 className="text-2xl font-semibold text-white mb-8">
+              <h3
+                className="text-2xl font-semibold text-white mb-8"
+                data-translate="contactOtherChannels"
+              >
                 Outros canais de contato
               </h3>
 
@@ -59,14 +70,22 @@ const FacchiniContact = () => {
                     <MessageCircle className="w-6 h-6 text-facchini-accent-1" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-2">WhatsApp</h4>
+                    <h4
+                      className="font-semibold text-white mb-2"
+                      data-translate="contactWhatsApp"
+                    >
+                      WhatsApp
+                    </h4>
                     <button
                       onClick={handleWhatsAppClick}
                       className="text-facchini-accent-1 hover:text-facchini-accent-2 transition-colors"
                     >
-                      (11) 9 9999-9999
+                      (11) 91711-0573
                     </button>
-                    <p className="text-facchini-text-muted text-sm mt-1">
+                    <p
+                      className="text-facchini-text-muted text-sm mt-1"
+                      data-translate="contactWhatsAppDesc"
+                    >
                       Atendimento rápido e direto
                     </p>
                   </div>
@@ -77,7 +96,12 @@ const FacchiniContact = () => {
                     <Phone className="w-6 h-6 text-facchini-accent-1" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-2">Telefone</h4>
+                    <h4
+                      className="font-semibold text-white mb-2"
+                      data-translate="contactPhone"
+                    >
+                      Telefone
+                    </h4>
                     <a
                       href="tel:+551150413599"
                       onClick={handlePhoneClick}
@@ -85,7 +109,10 @@ const FacchiniContact = () => {
                     >
                       (11) 5041-3599
                     </a>
-                    <p className="text-facchini-text-muted text-sm mt-1">
+                    <p
+                      className="text-facchini-text-muted text-sm mt-1"
+                      data-translate="contactPhoneDesc"
+                    >
                       Horário comercial
                     </p>
                   </div>
@@ -96,14 +123,22 @@ const FacchiniContact = () => {
                     <Mail className="w-6 h-6 text-facchini-accent-1" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-2">E-mail</h4>
+                    <h4
+                      className="font-semibold text-white mb-2"
+                      data-translate="contactEmail"
+                    >
+                      E-mail
+                    </h4>
                     <a
                       href="mailto:contato@facchiniengenharia.com.br"
                       className="text-facchini-accent-1 hover:text-facchini-accent-2 transition-colors break-all"
                     >
                       contato@facchiniengenharia.com.br
                     </a>
-                    <p className="text-facchini-text-muted text-sm mt-1">
+                    <p
+                      className="text-facchini-text-muted text-sm mt-1"
+                      data-translate="contactEmailDesc"
+                    >
                       Resposta em até 24h
                     </p>
                   </div>
@@ -114,11 +149,17 @@ const FacchiniContact = () => {
                     <MapPin className="w-6 h-6 text-facchini-accent-1" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-2">Endereço</h4>
-                    <p className="text-facchini-text-muted">
-                      São Paulo, SP
-                      <br />
-                      Atendemos toda a Grande São Paulo
+                    <h4
+                      className="font-semibold text-white mb-2"
+                      data-translate="contactAddress"
+                    >
+                      Endereço
+                    </h4>
+                    <p
+                      className="text-facchini-text-muted"
+                      data-translate="contactAddressInfo"
+                    >
+                      São Paulo, SP Atendemos toda a Grande São Paulo
                     </p>
                   </div>
                 </div>
@@ -128,10 +169,16 @@ const FacchiniContact = () => {
                     <Clock className="w-6 h-6 text-facchini-accent-1" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-2">
+                    <h4
+                      className="font-semibold text-white mb-2"
+                      data-translate="contactHours"
+                    >
                       Horário de atendimento
                     </h4>
-                    <p className="text-facchini-text-muted">
+                    <p
+                      className="text-facchini-text-muted"
+                      data-translate="contactHoursInfo"
+                    >
                       Segunda a sexta: 8h às 17h
                     </p>
                   </div>

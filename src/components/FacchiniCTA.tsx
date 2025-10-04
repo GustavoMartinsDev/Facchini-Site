@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ArrowRight, MessageCircle } from "lucide-react";
+import { languageManager } from "../lib/translations";
 
 const FACCHINI_FOUNDING_DATE = "1993-08-24";
 
@@ -61,8 +62,7 @@ const FacchiniCTA = () => {
         page_section: "cta_banner",
       });
     }
-    const message =
-      "Olá! Gostaria de solicitar um orçamento para meu projeto de construção/reforma. Podem me ajudar?";
+    const message = languageManager.getWhatsAppMessage("contact");
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/5511917110573?text=${encodedMessage}`, "_blank");
   };
@@ -85,7 +85,10 @@ const FacchiniCTA = () => {
 
       <div className="section-container relative z-10">
         <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-8 leading-tight fadeIn">
+          <h2
+            className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-8 leading-tight fadeIn"
+            data-translate="ctaTitle"
+          >
             Seu projeto, executado com excelência —<br />
             <span className="text-facchini-accent-1">
               no prazo e sem surpresas.
@@ -93,14 +96,18 @@ const FacchiniCTA = () => {
           </h2>
 
           <p className="text-xl text-facchini-text-muted mb-12 fadeIn stagger-1">
-            Transforme sua visão em realidade com a experiência de quem entrega
-            resultados há {counter} anos.
+            <span data-translate="ctaSubtitlePart1">
+              Transforme sua visão em realidade com a experiência de quem entrega resultados há
+            </span>{" "}
+            <span className="text-facchini-accent-1 font-semibold">{counter}</span>{" "}
+            <span data-translate="ctaSubtitlePart2">anos.</span>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center fadeIn stagger-2">
             <button
               onClick={handleWhatsAppClick}
               className="button-primary text-lg px-8 py-4 flex items-center group"
+              data-translate="ctaWhatsAppButton"
             >
               <MessageCircle className="mr-3 w-5 h-5" />
               Falar no WhatsApp agora
@@ -110,6 +117,7 @@ const FacchiniCTA = () => {
             <button
               onClick={handleFormClick}
               className="button-secondary text-lg px-8 py-4"
+              data-translate="ctaFormButton"
             >
               Solicitar orçamento
             </button>
@@ -119,9 +127,13 @@ const FacchiniCTA = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-16 border-t border-facchini-divider fadeIn stagger-3">
             <div className="text-center">
               <div className="text-2xl font-bold text-facchini-accent-1 mb-2">
-                {counter} anos
+                {counter}
+                <span data-translate="ctaYearsValue">anos</span>
               </div>
-              <div className="text-facchini-text-muted">
+              <div
+                className="text-facchini-text-muted"
+                data-translate="ctaYearsLabel"
+              >
                 de tradição e experiência
               </div>
             </div>
@@ -130,13 +142,21 @@ const FacchiniCTA = () => {
                 +170k m²
               </div>
 
-              <div className="text-facchini-text-muted">entregues no prazo</div>
+              <div
+                className="text-facchini-text-muted"
+                data-translate="ctaM2Label"
+              >
+                entregues no prazo
+              </div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-facchini-accent-1 mb-2">
                 100%
               </div>
-              <div className="text-facchini-text-muted">
+              <div
+                className="text-facchini-text-muted"
+                data-translate="ctaTransparencyLabel"
+              >
                 transparência e controle
               </div>
             </div>

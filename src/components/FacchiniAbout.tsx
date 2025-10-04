@@ -78,7 +78,7 @@ const FacchiniAbout = () => {
     <section id="sobre" className="py-24 bg-black relative" ref={sectionRef}>
       <div className="section-container">
         <div className="text-center mb-16">
-          <h2 className="section-title mb-6 fadeIn">
+          <h2 className="section-title mb-6 fadeIn" data-translate="sobreTitle">
             Por que escolher a Facchini
           </h2>
         </div>
@@ -89,7 +89,10 @@ const FacchiniAbout = () => {
             <div className="count-up text-4xl md:text-5xl font-bold mb-2">
               {counters.years}
             </div>
-            <div className="text-facchini-text-muted text-sm">
+            <div
+              className="text-facchini-text-muted text-sm"
+              data-translate="sobreExperienceLabel"
+            >
               anos de atuação
             </div>
           </div>
@@ -98,14 +101,22 @@ const FacchiniAbout = () => {
             <div className="count-up text-4xl md:text-5xl font-bold mb-2">
               +{counters.area}k
             </div>
-            <div className="text-facchini-text-muted text-sm">m² entregues</div>
+            <div
+              className="text-facchini-text-muted text-sm"
+              data-translate="sobreM2Label"
+            >
+              m² entregues
+            </div>
           </div>
 
           <div className="text-center fadeIn stagger-3">
             <div className="count-up text-4xl md:text-5xl font-bold mb-2">
               +{counters.cities}
             </div>
-            <div className="text-facchini-text-muted text-sm">
+            <div
+              className="text-facchini-text-muted text-sm"
+              data-translate="sobreCitiesLabel"
+            >
               cidades atendidas
             </div>
           </div>
@@ -114,7 +125,10 @@ const FacchiniAbout = () => {
             <div className="count-up text-4xl md:text-5xl font-bold mb-2">
               +{counters.stores}
             </div>
-            <div className="text-facchini-text-muted text-sm">
+            <div
+              className="text-facchini-text-muted text-sm"
+              data-translate="sobreStoresLabel"
+            >
               obras de varejo
             </div>
           </div>
@@ -123,7 +137,10 @@ const FacchiniAbout = () => {
             <div className="count-up text-4xl md:text-5xl font-bold mb-2">
               +{counters.architects}
             </div>
-            <div className="text-facchini-text-muted text-sm">
+            <div
+              className="text-facchini-text-muted text-sm"
+              data-translate="sobreArchitectsLabel"
+            >
               arquitetos atendidos
             </div>
           </div>
@@ -135,10 +152,16 @@ const FacchiniAbout = () => {
             <div className="w-12 h-12 bg-facchini-accent-1 rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-black font-bold">{counters.years}</span>
             </div>
-            <h3 className="text-lg font-semibold mb-3 text-white">
+            <h3
+              className="text-lg font-semibold mb-3 text-white"
+              data-translate="sobreFeature1Title"
+            >
               {counters.years} anos
             </h3>
-            <p className="text-facchini-text-muted">
+            <p
+              className="text-facchini-text-muted"
+              data-translate="sobreFeature1Description"
+            >
               de atuação em obras de alto padrão.
             </p>
           </div>
@@ -147,10 +170,16 @@ const FacchiniAbout = () => {
             <div className="w-12 h-12 bg-facchini-accent-1 rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-black font-bold">✓</span>
             </div>
-            <h3 className="text-lg font-semibold mb-3 text-white">
+            <h3
+              className="text-lg font-semibold mb-3 text-white"
+              data-translate="sobreFeature2Title"
+            >
               +170 mil m²
             </h3>
-            <p className="text-facchini-text-muted">
+            <p
+              className="text-facchini-text-muted"
+              data-translate="sobreFeature2Description"
+            >
               entregues <strong>no prazo</strong>.
             </p>
           </div>
@@ -159,10 +188,16 @@ const FacchiniAbout = () => {
             <div className="w-12 h-12 bg-facchini-accent-1 rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-black font-bold">$</span>
             </div>
-            <h3 className="text-lg font-semibold mb-3 text-white">
+            <h3
+              className="text-lg font-semibold mb-3 text-white"
+              data-translate="sobreFeature3Title"
+            >
               Gestão de custos
             </h3>
-            <p className="text-facchini-text-muted">
+            <p
+              className="text-facchini-text-muted"
+              data-translate="sobreFeature3Description"
+            >
               com transparência e previsibilidade.
             </p>
           </div>
@@ -171,10 +206,16 @@ const FacchiniAbout = () => {
             <div className="w-12 h-12 bg-facchini-accent-1 rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-black font-bold">★</span>
             </div>
-            <h3 className="text-lg font-semibold mb-3 text-white">
+            <h3
+              className="text-lg font-semibold mb-3 text-white"
+              data-translate="sobreFeature4Title"
+            >
               Acabamento premium
             </h3>
-            <p className="text-facchini-text-muted">
+            <p
+              className="text-facchini-text-muted"
+              data-translate="sobreFeature4Description"
+            >
               e rigor técnico do início ao fim.
             </p>
           </div>
@@ -183,10 +224,16 @@ const FacchiniAbout = () => {
             <div className="w-12 h-12 bg-facchini-accent-1 rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-black font-bold">♦</span>
             </div>
-            <h3 className="text-lg font-semibold mb-3 text-white">
+            <h3
+              className="text-lg font-semibold mb-3 text-white"
+              data-translate="sobreFeature5Title"
+            >
               Atendimento personalizado
             </h3>
-            <p className="text-facchini-text-muted">
+            <p
+              className="text-facchini-text-muted"
+              data-translate="sobreFeature5Description"
+            >
               para clientes e arquitetos.
             </p>
           </div>
@@ -195,10 +242,16 @@ const FacchiniAbout = () => {
             <div className="w-12 h-12 bg-facchini-accent-2 rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-black font-bold">∞</span>
             </div>
-            <h3 className="text-lg font-semibold mb-3 text-white">
+            <h3
+              className="text-lg font-semibold mb-3 text-white"
+              data-translate="sobreFeature6Title"
+            >
               Excelência técnica
             </h3>
-            <p className="text-facchini-text-muted">
+            <p
+              className="text-facchini-text-muted"
+              data-translate="sobreFeature6Description"
+            >
               e previsibilidade para quem exige padrão de luxo.
             </p>
           </div>

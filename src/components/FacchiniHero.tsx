@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import ContactForm from "./ContactForm";
+import { languageManager } from "../lib/translations";
 
 const FacchiniHero = () => {
   const handleWhatsAppClick = () => {
@@ -9,8 +10,7 @@ const FacchiniHero = () => {
         page_section: "hero",
       });
     }
-    const message =
-      "Olá! Gostaria de solicitar um orçamento para meu projeto de construção/reforma. Podem me ajudar?";
+    const message = languageManager.getWhatsAppMessage("contact");
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/5511917110573?text=${encodedMessage}`, "_blank");
   };
@@ -33,11 +33,17 @@ const FacchiniHero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <h1 className="section-title fadeIn stagger-2">
+            <h1
+              className="section-title fadeIn stagger-2"
+              data-translate="heroTitle"
+            >
               CONSTRUÇÃO DE ALTO PADRÃO
             </h1>
 
-            <p className="section-subtitle fadeIn stagger-3">
+            <p
+              className="section-subtitle fadeIn stagger-3"
+              data-translate="heroSubtitle"
+            >
               Mais de três décadas transformando projetos em realidade.
             </p>
 
@@ -49,12 +55,17 @@ const FacchiniHero = () => {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
                 className="button-primary flex items-center justify-center group"
+                data-translate="heroButton1"
               >
                 Solicitar orçamento agora
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
 
-              <button onClick={scrollToPortfolio} className="button-secondary">
+              <button
+                onClick={scrollToPortfolio}
+                className="button-secondary"
+                data-translate="heroButton2"
+              >
                 Ver portfólio
               </button>
             </div>
@@ -62,24 +73,41 @@ const FacchiniHero = () => {
             {/* Trust indicators */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 fadeIn stagger-4">
               <div className="text-center sm:text-left">
-                <div className="text-sm text-facchini-text-muted">
+                <div
+                  className="text-sm text-facchini-text-muted"
+                  data-translate="heroSpecialtiesLabel"
+                >
                   Especialidades
                 </div>
-                <div className="font-medium">
+                <div
+                  className="font-medium"
+                  data-translate="heroSpecialtiesText"
+                >
                   Residencial • Corporativo • Lojas premium
                 </div>
               </div>
               <div className="text-center sm:text-left">
-                <div className="text-sm text-facchini-text-muted">
+                <div
+                  className="text-sm text-facchini-text-muted"
+                  data-translate="heroServiceLabel"
+                >
                   Atendimento
                 </div>
-                <div className="font-medium">
+                <div className="font-medium" data-translate="heroServiceText">
                   Personalizado do projeto à entrega
                 </div>
               </div>
               <div className="text-center sm:text-left">
-                <div className="text-sm text-facchini-text-muted">Gestão</div>
-                <div className="font-medium">
+                <div
+                  className="text-sm text-facchini-text-muted"
+                  data-translate="heroManagementLabel"
+                >
+                  Gestão
+                </div>
+                <div
+                  className="font-medium"
+                  data-translate="heroManagementText"
+                >
                   Controle total de custos e prazos
                 </div>
               </div>
@@ -89,7 +117,10 @@ const FacchiniHero = () => {
           {/* Right Form */}
           <div className="fadeIn stagger-4">
             <div className="glass-card p-8">
-              <h3 className="text-xl font-semibold mb-6 text-center text-white">
+              <h3
+                className="text-xl font-semibold mb-6 text-center text-white"
+                data-translate="heroFormTitle"
+              >
                 Solicite seu orçamento
               </h3>
 

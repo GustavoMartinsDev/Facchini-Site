@@ -13,7 +13,10 @@ const FacchiniFooter = () => {
             <div className="text-3xl font-bold text-facchini-accent-2 mb-2">
               FACCHINI
             </div>
-            <div className="text-facchini-text-muted text-sm">
+            <div
+              className="text-facchini-text-muted text-sm"
+              data-translate="footerTagline"
+            >
               Engenharia de Alto Padrão
             </div>
           </div>
@@ -45,20 +48,35 @@ const FacchiniFooter = () => {
 
           {/* Links */}
           <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
-            <a href="#" className="text-facchini-text-muted hover:text-facchini-accent-1 transition-colors">
+            <a
+              href="#"
+              className="text-facchini-text-muted hover:text-facchini-accent-1 transition-colors"
+              data-translate="footerPrivacy"
+            >
               Política de Privacidade
             </a>
-            <a href="#" className="text-facchini-text-muted hover:text-facchini-accent-1 transition-colors">
+            <a
+              href="#"
+              className="text-facchini-text-muted hover:text-facchini-accent-1 transition-colors"
+              data-translate="footerTerms"
+            >
               Termos de Uso
             </a>
-            <a href="#contato" className="text-facchini-text-muted hover:text-facchini-accent-1 transition-colors">
+            <a
+              href="#contato"
+              className="text-facchini-text-muted hover:text-facchini-accent-1 transition-colors"
+              data-translate="footerContact"
+            >
               Contato
             </a>
           </div>
 
           {/* Copyright */}
-          <div className="text-facchini-text-muted text-sm">
-            © {currentYear} Facchini Engenharia. Todos os direitos reservados.
+          <div
+            className="text-facchini-text-muted text-sm"
+            data-translate="footerCopyright"
+          >
+            © 2025 Facchini Engenharia. Todos os direitos reservados.
           </div>
         </div>
       </div>
