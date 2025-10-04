@@ -6,6 +6,7 @@ import React, {
   ReactNode,
 } from "react";
 import { languageManager, Language } from "@/lib/translations";
+import { seoManager } from "@/lib/seo-manager";
 
 interface TranslationContextType {
   currentLanguage: Language;
@@ -35,6 +36,7 @@ export const TranslationProvider: React.FC<TranslationProviderProps> = ({
     // Apply translations when component mounts with a small delay to ensure DOM is ready
     setTimeout(() => {
       languageManager.applyTranslations();
+      seoManager.updateAllSEOElements();
     }, 100);
 
     // Subscribe to language changes
@@ -81,6 +83,9 @@ export const TranslationProvider: React.FC<TranslationProviderProps> = ({
       // Change language after refresh
       await new Promise((resolve) => setTimeout(resolve, 100));
       languageManager.changeLanguage(language);
+
+      // Update SEO elements with new language
+      seoManager.updateAllSEOElements();
     } catch (error) {
       console.error("Error changing language:", error);
       setIsLoading(false);
