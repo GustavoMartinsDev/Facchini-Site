@@ -95,11 +95,17 @@ const FacchiniCTA = () => {
             </span>
           </h2>
 
-          <p className="text-xl text-facchini-text-muted mb-12 fadeIn stagger-1">
+          <p
+            style={{ display: "none" }}
+            className="text-xl text-facchini-text-muted mb-12 fadeIn stagger-1"
+          >
             <span data-translate="ctaSubtitlePart1">
-              Transforme sua visão em realidade com a experiência de quem entrega resultados há
+              Transforme sua visão em realidade com a experiência de quem
+              entrega resultados há
             </span>{" "}
-            <span className="text-facchini-accent-1 font-semibold">{counter}</span>{" "}
+            <span className="text-facchini-accent-1 font-semibold">
+              {counter}
+            </span>{" "}
             <span data-translate="ctaSubtitlePart2">anos.</span>
           </p>
 
@@ -139,7 +145,7 @@ const FacchiniCTA = () => {
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-facchini-accent-1 mb-2">
-                +170k m²
+                +100k m²
               </div>
 
               <div

@@ -9,16 +9,14 @@ const FacchiniFooter = () => {
       <div className="section-container">
         <div className="text-center">
           {/* Logo */}
-          <div className="mb-8">
-            <div className="text-3xl font-bold text-facchini-accent-2 mb-2">
-              FACCHINI
-            </div>
-            <div
-              className="text-facchini-text-muted text-sm"
-              data-translate="footerTagline"
-            >
-              Engenharia de Alto Padrão
-            </div>
+          <div className="mb-4">
+            <img
+              src="../Facchini_Logo.png"
+              alt="Facchini Engenharia"
+              className="mx-auto mb-4"
+              width={220}
+              height={10}
+            />
           </div>
 
           {/* Social Links */}

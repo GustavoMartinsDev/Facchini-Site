@@ -53,7 +53,10 @@ const FacchiniPortfolio = () => {
   };
 
   return (
-    <section id="portfolio" className="py-24 bg-black relative">
+    <section
+      id="portfolio"
+      className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative"
+    >
       <div className="section-container">
         <div className="text-center mb-16">
           <h2
@@ -102,7 +105,10 @@ const FacchiniPortfolio = () => {
           ))}
         </div>
 
-        <div className="text-center fadeIn stagger-4">
+        <div
+          className="text-center fadeIn stagger-4"
+          style={{ display: "none" }}
+        >
           <button
             onClick={handleCTAClick}
             className="button-primary text-lg px-8 py-4"

@@ -31,7 +31,7 @@ const FacchiniContact = () => {
             className="section-title mb-6 fadeIn"
             data-translate="contactTitle"
           >
-            Fale com a Facchini
+            Fale com a Facchini Engenharia
           </h2>
           <p
             className="section-subtitle fadeIn stagger-1 mx-auto"

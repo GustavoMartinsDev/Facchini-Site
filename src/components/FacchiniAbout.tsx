@@ -15,8 +15,8 @@ const FacchiniAbout = () => {
 
   const targetValues = {
     years: 0,
-    area: 170,
-    cities: 15,
+    area: 100,
+    cities: 10,
     stores: 250,
     architects: 50,
   };
@@ -79,12 +79,12 @@ const FacchiniAbout = () => {
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="section-title mb-6 fadeIn" data-translate="sobreTitle">
-            Por que escolher a Facchini
+            Por que escolher a Facchini Engenharia
           </h2>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 ap-10 mb-16">
           <div className="text-center fadeIn stagger-1">
             <div className="count-up text-4xl md:text-5xl font-bold mb-2">
               {counters.years}
@@ -121,7 +121,7 @@ const FacchiniAbout = () => {
             </div>
           </div>
 
-          <div className="text-center fadeIn stagger-4">
+          {/* <div className="text-center fadeIn stagger-4">
             <div className="count-up text-4xl md:text-5xl font-bold mb-2">
               +{counters.stores}
             </div>
@@ -131,7 +131,7 @@ const FacchiniAbout = () => {
             >
               obras de varejo
             </div>
-          </div>
+          </div> */}
 
           <div className="text-center fadeIn stagger-4">
             <div className="count-up text-4xl md:text-5xl font-bold mb-2">
@@ -174,7 +174,7 @@ const FacchiniAbout = () => {
               className="text-lg font-semibold mb-3 text-white"
               data-translate="sobreFeature2Title"
             >
-              +170 mil m²
+              +100 mil m²
             </h3>
             <p
               className="text-facchini-text-muted"
@@ -210,7 +210,7 @@ const FacchiniAbout = () => {
               className="text-lg font-semibold mb-3 text-white"
               data-translate="sobreFeature4Title"
             >
-              Acabamento premium
+              Acabamento refinado
             </h3>
             <p
               className="text-facchini-text-muted"
@@ -246,13 +246,13 @@ const FacchiniAbout = () => {
               className="text-lg font-semibold mb-3 text-white"
               data-translate="sobreFeature6Title"
             >
-              Excelência técnica
+              Técnica de alta qualidade
             </h3>
             <p
               className="text-facchini-text-muted"
               data-translate="sobreFeature6Description"
             >
-              e previsibilidade para quem exige padrão de luxo.
+              e previsibilidade para quem exige técnica de alta qualidade.
             </p>
           </div>
         </div>

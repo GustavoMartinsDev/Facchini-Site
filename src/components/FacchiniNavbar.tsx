@@ -100,7 +100,7 @@ const FacchiniNavbar = () => {
       >
         {counter}{" "}
         <span data-translate="navTopbar">
-          anos de obras entregues com excelência • +170 mil m² executados
+          anos de obras entregues com excelência • +100 mil m² executados
         </span>
       </div>
 
@@ -108,9 +108,12 @@ const FacchiniNavbar = () => {
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-2xl font-bold text-facchini-accent-2">
-              FACCHINI
-            </div>
+            <img
+              src="../Facchini_Logo.png"
+              alt="Facchini Engenharia"
+              width={180}
+              height={10}
+            />
           </div>
 
           {/* Desktop Navigation */}

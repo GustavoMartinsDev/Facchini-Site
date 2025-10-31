@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import FacchiniNavbar from "@/components/FacchiniNavbar";
 import FacchiniHero from "@/components/FacchiniHero";
@@ -24,10 +23,10 @@ const Index = () => {
       },
       { threshold: 0.1 }
     );
-    
+
     const elements = document.querySelectorAll(".fadeIn");
     elements.forEach((el) => observer.observe(el));
-    
+
     return () => {
       elements.forEach((el) => observer.unobserve(el));
     };
@@ -38,9 +37,9 @@ const Index = () => {
       <FacchiniNavbar />
       <main>
         <FacchiniHero />
+        <FacchiniPortfolio />
         <FacchiniAbout />
         <FacchiniServices />
-        <FacchiniPortfolio />
         <FacchiniTestimonials />
         <FacchiniCTA />
         <FacchiniContact />

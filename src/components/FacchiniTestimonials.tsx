@@ -7,6 +7,7 @@ interface Testimonial {
   name: string;
   role: string;
   image: string;
+  indexx?: number;
 }
 
 const testimonials: Testimonial[] = [
@@ -28,23 +29,22 @@ const testimonials: Testimonial[] = [
     role: "Diretor Operacional",
     image: "/testimonials/ricardo-vilar.jpg",
   },
+];
+
+const testimonials2: Testimonial[] = [
   {
     text: "Reformamos a cobertura. A Facchini entregou padrão de luxo sem transtornos. Organização e limpeza de obra chamaram atenção.",
     name: "Patrícia Nogueira",
     role: "Cliente Residencial",
     image: "/testimonials/patricia-nogueira.jpg",
-  },
-  {
-    text: "Em varejo, prazo é tudo. A loja foi entregue no dia combinado, com acabamento superior e checklist impecável.",
-    name: "Thiago Lopes",
-    role: "Head de Expansão — Varejo",
-    image: "/testimonials/thiago-lopes.jpg",
+    indexx: 4,
   },
   {
     text: "A compatibilização com nossos fornecedores foi exemplar. A sensação foi de parceria estratégica, não apenas execução.",
     name: "Camila Ferraz",
     role: "Diretora Administrativa",
     image: "/testimonials/camila-ferraz.jpg",
+    indexx: 6,
   },
 ];
 
@@ -63,7 +63,8 @@ const TestimonialCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay }}
       viewport={{ once: true }}
-      className="bg-gray-900 border border-facchini-divider rounded-2xl p-8 hover:border-facchini-accent-1/30 transition-colors duration-300"
+      className="bg-gray-900 border border-facchini-divider rounded-2xl p-8 hover:border-facchini-accent-1/30 transition-colors duration-300 "
+      style={{ minHeight: 328 }}
     >
       <div className="mb-6">
         <Quote className="w-8 h-8 text-facchini-accent-1 mb-4" />
@@ -76,7 +77,10 @@ const TestimonialCard = ({
       </div>
 
       <div className="flex items-center gap-4">
-        <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-800">
+        <div
+          className="w-12 h-12 rounded-full overflow-hidden bg-gray-800"
+          style={{ display: "none" }}
+        >
           <img
             src={testimonial.image}
             alt={`Foto de ${testimonial.name}`}
@@ -133,20 +137,33 @@ const FacchiniTestimonials = () => {
             className="section-subtitle mx-auto max-w-2xl"
             data-translate="testimonialsSubtitle"
           >
-            Resultados consistentes em obras residenciais de alto padrão,
-            espaços corporativos e lojas premium.
+            Resultados consistentes em obras residenciais.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial, i) => (
             <TestimonialCard
-              key={index}
+              key={i}
               testimonial={testimonial}
-              delay={index * 0.1}
-              index={index}
+              delay={i * 0.1}
+              index={i}
             />
           ))}
+        </div>
+
+        <div className="pt-4 grid grid-cols-1 md:grid-cols-2 gap-8 lg:flex lg:justify-center lg:items-start">
+          {testimonials2.map((testimonial2, i) => {
+            return (
+              <div key={i} className="lg:w-[min(420px,33%)]">
+                <TestimonialCard
+                  testimonial={testimonial2}
+                  delay={testimonial2.indexx * 0.1}
+                  index={testimonial2.indexx}
+                />
+              </div>
+            );
+          })}
         </div>
 
         <motion.div
@@ -166,7 +183,7 @@ const FacchiniTestimonials = () => {
             className="button-secondary hover:bg-facchini-accent-1 hover:text-black"
             data-translate="testimonialsButton"
           >
-            Seja nosso próximo cliente satisfeito
+            Seja nosso próximo cliente
           </button>
         </motion.div>
       </div>

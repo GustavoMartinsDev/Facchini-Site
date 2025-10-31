@@ -37,7 +37,7 @@ const FacchiniHero = () => {
               className="section-title fadeIn stagger-2"
               data-translate="heroTitle"
             >
-              CONSTRUÇÃO DE ALTO PADRÃO
+              CONSTRUÇÃO E REFORMA RESIDENCIAL
             </h1>
 
             <p
@@ -83,7 +83,7 @@ const FacchiniHero = () => {
                   className="font-medium"
                   data-translate="heroSpecialtiesText"
                 >
-                  Residencial • Corporativo • Lojas premium
+                  Residencial
                 </div>
               </div>
               <div className="text-center sm:text-left">

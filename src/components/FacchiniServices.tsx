@@ -13,7 +13,7 @@ const FacchiniServices = () => {
   const services = [
     {
       icon: <Home className="w-8 h-8" />,
-      title: "Residencial de alto padrão",
+      title: "Residencial",
       titleKey: "service1Title",
       description:
         "Execução completa com controle técnico e acabamento impecável.",
@@ -21,7 +21,7 @@ const FacchiniServices = () => {
     },
     {
       icon: <Wrench className="w-8 h-8" />,
-      title: "Reformas premium",
+      title: "Reforma de apartamento",
       titleKey: "service2Title",
       description:
         "Modernização com gestão de prazos e mínima interferência na rotina.",
@@ -116,7 +116,10 @@ const FacchiniServices = () => {
           ))}
         </div>
 
-        <div className="text-center fadeIn stagger-4">
+        <div
+          className="text-center fadeIn stagger-4"
+          style={{ display: "none" }}
+        >
           <button
             onClick={handleCTAClick}
             className="button-secondary hover:bg-facchini-accent-1 hover:text-black"
